@@ -1,0 +1,13 @@
+server:
+  port: 8081
+
+kafka:
+  topic: orderTaobao
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9091, localhost:9092
+    consumer:
+      group-id: orderConsumer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer

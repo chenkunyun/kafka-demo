@@ -2,11 +2,13 @@ server:
   port: 8080
 
 kafka:
-  topic: orderTaobao
+  servers: fedora:9091, fedora:9092
+  order:
+    topic: orderTaobao
 
-spring:
-  kafka:
-    bootstrap-servers: localhost:9091, localhost:9092
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+#spring:
+#  kafka:
+#    bootstrap-servers: fedora:9091, fedora:9092
+#    producer:
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer

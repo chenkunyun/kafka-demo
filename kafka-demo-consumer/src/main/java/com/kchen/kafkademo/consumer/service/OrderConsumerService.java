@@ -13,7 +13,7 @@ public class OrderConsumerService {
 
     private static Logger logger = LoggerFactory.getLogger(OrderConsumerService.class);
 
-    @KafkaListener(topics = "${kafka.topic}")
+    @KafkaListener(topics = "${kafka.order.topic}")
     public void processOrder(ConsumerRecord<String, Order> record) {
         logger.info("begin processing order:{}", record.value());
     }

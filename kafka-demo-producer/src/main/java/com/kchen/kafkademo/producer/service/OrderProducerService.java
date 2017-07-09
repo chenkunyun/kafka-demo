@@ -19,7 +19,7 @@ public class OrderProducerService {
 
     private static Logger logger = LoggerFactory.getLogger(OrderProducerService.class);
 
-    @Value("kafka.topic")
+    @Value("${kafka.order.topic}")
     @NotNull
     private String topic;
 

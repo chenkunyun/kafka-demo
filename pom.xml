@@ -20,6 +20,7 @@
         <java.version>1.8</java.version>
 
         <spring.boot.version>1.5.2.RELEASE</spring.boot.version>
+        <spring-kafka.version>1.2.2.RELEASE</spring-kafka.version>
 
         <!--plugin version-->
         <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
@@ -46,6 +47,18 @@
                 <version>${spring.boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring-kafka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka-test</artifactId>
+                <version>${spring-kafka.version}</version>
+                <scope>test</scope>
             </dependency>
 
             <dependency>

@@ -2,12 +2,17 @@ server:
   port: 8081
 
 kafka:
-  topic: orderTaobao
+  servers: fedora:9091, fedora:9092
+  order:
+    topic: orderTaobao
+    group-id: orderConsumer
 
-spring:
-  kafka:
-    bootstrap-servers: localhost:9091, localhost:9092
-    consumer:
-      group-id: orderConsumer
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+#spring:
+#  kafka:
+#    bootstrap-servers: fedora:9091, fedora:9092
+#    consumer:
+#      group-id: orderConsumer
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#
+##     这里不能这么写，因为不知道JsonDeserializer<T>的T实际类型
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
